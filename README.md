@@ -13,16 +13,17 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 
 ### Day 1
 
-* Introduction to COMPAS
-* Introduction to Graphic statics
+* Introduction to graphic statics
+* Computational graphic statics
 
 *Break*
 
-* General examples
-* Packages overview
-* Structural design examples
+* Graphic statics tutorial
+* Graphic statics examples
 
 *Lunch*
+
+* Introduction to COMPAS
 
 1. Algebraic Graph Statics (AGS): **compas_ags**
     * Introduction
