@@ -2,7 +2,7 @@
 
 *Graphic Statics-based Structural Design*
 
-During this workshop we will use COMPAS to ...
+During this workshop we will use COMPAS to explore graphic statics-based structural design methods.
 
 * https://github.com/compas-dev/compas
 * https://compas-dev.github.io/main
@@ -16,31 +16,31 @@ During this workshop we will use COMPAS to ...
 * Introduction to COMPAS
 * Introduction to Graphic statics
 
-Break
+*Break*
 
 * General examples
 * Packages overview
 * Structural design examples
 
-Lunch
+*Lunch*
 
-1. Algebraic Graph Statics (AGS)
- * Introduction
- * Example(s)
+1. Algebraic Graph Statics (AGS): **compas_ags**
+    * Introduction
+    * Example(s)
 
-2. Thrust Network Analysis (TNA)
- * Introduction
- * Example(s)
+2. Thrust Network Analysis (TNA): **compas_tna**
+    * Introduction
+    * Example(s)
 
-3. 3D Graphic Statics (3GS)
- * Introduction
- * Example(s)
+3. 3D Graphic Statics (3GS): **compas_3gs**
+    * Introduction
+    * Example(s)
 
 ### Day 2
 
 4. Combinatorial Equilibrium Modelling (CEM)
-* Introduction
-* Example(s)
+    * Introduction
+    * Example(s)
 
 
 ## Installation
@@ -48,4 +48,20 @@ Lunch
 * [Instructions for Mac](mac.md)
 * [Instructions for Windows](windows.md)
 
-## Examples
+
+## Interactive drawings
+
+[eQUILIBRIUM](http://block.arch.ethz.ch/eq)
+
+* [Single panel truss](http://block.arch.ethz.ch/eq/drawing/view/36)
+* [Funicular line through two points](http://block.arch.ethz.ch/eq/drawing/view/5)
+* [Minimum and maximum thrust in a masonry arch](http://block.arch.ethz.ch/eq/drawing/view/16)
+
+
+## Reading
+
+* [Geometry-based Understanding of Structures](http://block.arch.ethz.ch/brg/publications/399)
+* [Algebraic Graph Statics](http://block.arch.ethz.ch/brg/publications/413)
+* [Thrust Network Analysis: A new methodology for three-dimensional equilibrium](http://block.arch.ethz.ch/brg/publications/355)
+* [On the Equilibrium of Funicular Polyhedral Frames and Convex Polyhedral Force Diagrams](http://block.arch.ethz.ch/brg/publications/444)
+* [Computational Design Framework for 3D Graphic Statics](http://block.arch.ethz.ch/brg/publications/897)
