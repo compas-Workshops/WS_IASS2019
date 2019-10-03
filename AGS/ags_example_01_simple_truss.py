@@ -5,6 +5,8 @@ author: Tom Van Mele
 email: vanmelet@ethz.ch
 
 """
+import os
+
 import compas
 import compas_ags
 
@@ -14,16 +16,36 @@ from compas_ags.viewers import Viewer
 from compas_ags.ags import graphstatics
 
 
-form = FormDiagram.from_obj(compas_ags.get('paper/gs_form_force.obj'))
+# 1. make form diagram from obj
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+FILE = os.path.join(HERE, 'simple_truss.obj')
+form = FormDiagram.from_obj(FILE)
+
+
+# 2. make force diagram from form diagram
+
 force = ForceDiagram.from_formdiagram(form)
 
+
+# 3. set the fixed points
+
+left  = list(form.vertices_where({'x': 0.0, 'y': 0.0}))[0]
+right = list(form.vertices_where({'x': 6.0, 'y': 0.0}))[0]
+
+
+# 4. set the magnitude of the applied load
+
 form.set_edge_force_by_index(1, -30.0)
+
+
+# 5. update diagrams
 
 graphstatics.form_update_q_from_qind(form)
 graphstatics.force_update_from_form(force, form)
 
-left  = list(form.vertices_where({'x': 0.0, 'y': 0.0}))[0]
-right = list(form.vertices_where({'x': 6.0, 'y': 0.0}))[0]
+
+# 6. visualise
 
 viewer = Viewer(form, force, delay_setup=False)
 

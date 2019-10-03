@@ -10,6 +10,8 @@ from compas_ags.ags import graphstatics
 from compas_ags.ags import loadpath
 
 
+# 1. define form diagram
+
 vertices = [
     [0.0, 0.0, 0],
     [1.0, 0.0, 0],
@@ -65,7 +67,14 @@ edges = [
 ]
 
 form = FormDiagram.from_vertices_and_edges(vertices, edges)
+
+
+# 2. make force diagram from form diagram
+
 force = ForceDiagram.from_formdiagram(form)
+
+
+# 3. independent edges
 
 index_uv = form.index_uv()
 
@@ -76,8 +85,14 @@ for index in ind:
     form.edge[u][v]['is_ind'] = True
     form.edge[u][v]['q'] = 1.
 
+
+# 4. update diagrams
+
 graphstatics.form_update_q_from_qind(form)
 graphstatics.force_update_from_form(force, form)
+
+
+# 5. forcediagram parameters
 
 force.vertex[7]['x']  = 0
 force.vertex[7]['y']  = 0
@@ -127,8 +142,18 @@ form.vertex[4]['is_fixed'] = True
 form.vertex[5]['is_fixed'] = True
 form.vertex[6]['is_fixed'] = True
 
+
+# 6. update form diagram from force diagram
+
 graphstatics.form_update_from_force(form, force)
+
+
+# 7. loadpath optimization
+
 loadpath.optimise_loadpath(form, force)
+
+
+# 8. visualise
 
 viewer = Viewer(form, force, delay_setup=False)
 
