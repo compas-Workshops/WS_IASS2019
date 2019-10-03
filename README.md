@@ -13,7 +13,6 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 
 ### Day 1
 
-* Introduction to structural design
 * Introduction to graphic statics
 * Computational graphic statics
 
@@ -44,7 +43,7 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
     * Examples and tutorial
 
 
-## Installation
+## Getting started
 
 <!-- [Instructions for Mac](mac.md) -->
 <!-- [Instructions for Windows](windows.md) -->
@@ -106,7 +105,7 @@ For example, create a folder called "Workshops" on your home drive and unzip the
 *On Mac*
 
 ```
-~/Workshop\WS_IASS2019
+~/Workshop/WS_IASS2019
 ```
 
 
@@ -127,7 +126,7 @@ On Mac, use the "Terminal".
 ![The command line](_images/the-command-line.png)
 
 
-## Installation
+## Installing the workshop repository
 
 We will use the command line to install the COMPAS Python packages (and their dependencies) required for the workshop.
 
@@ -228,7 +227,7 @@ The plugin will become available next time you start Rhino.
 > Sometimes the commands of the plugin only become available after you start the
 > PythonScriptEditor. Just type `EditPythonScript` ...
 
-For detailed information about the UI, please visit: https://github.com/BlockResearchGroup/compas_tna-UI
+For detailed information about the compas_tna-UI, please visit: https://github.com/BlockResearchGroup/compas_tna-UI
 
 
 
