@@ -124,7 +124,7 @@ On Mac, use the "Terminal".
 
 **For simplicity, this guide will refer to both Terminal and Anaconda Prompt as "the command line".**
 
-![The command line](images/the-command-line.png)
+![The command line](_images/the-command-line.png)
 
 
 ## Installation
@@ -160,21 +160,75 @@ Then try to import the packages that were just installed.
 >>> exit()
 ```
 
+## Rhino
+
+If this is the first time you are using Rhino 6 for Windows, or if you have never opened its
+PythonScriptEditor before, do so now: open Rhino and open the editor by typing `EditPythonScript`.
+Then simply close Rhino again.
+
+To install the COMPAS packages, type the following on the command line
+
+```bash
+python -m compas_rhino.install -p compas compas_rhino compas_ags compas_tna compas_3gs
+```
+
+On Windows, COMPAS packages are installed for Rhino 6 by default.
+To install COMPAS for Rhino 5 instead, do
+
+```bash
+python -m compas_rhino.install -v 5.0 -p compas compas_rhino compas_ags compas_tna compas_3gs
+```
+
+To check the installation, launch Rhino, open the PythonScriptEditor, and try
+importing the COMPAS packages in a script.
+Then run the script and if no errors pop up, you are good to go.
+
+```python
+import compas
+import compas_ags
+import compas_tna
+import compas_3gs
+```
+
+![Test Rhino](_images/test-rhino.png)
 
 
+## compas_tna-UI for Rhino
 
+Use the command line to navigate to the root folder of the UI repository.
+For example, if you downloaded or cloned the repo to your home drive, then do the following.
 
+*On Windows*
 
+```bash
+cd %USERPROFILE%\compas_tna-UI
+```
 
+*On Mac*
 
+```bash
+cd ~/compas_tna-UI
+```
 
+To install the UI do
 
+```bash
+python -m compas_rhino.install_plugin TNA{d8bb2ef6-4539-4ba7-aa48-8ecadb23c229}
+```
 
+Note that on Windows, the plugin will be installed for Rhino 6 by default.
+If you want to install it for Rhino 5, just do
 
+```bash
+python -m compas_rhino.install_plugin -v 5.0 TNA{d8bb2ef6-4539-4ba7-aa48-8ecadb23c229}
+```
 
+The plugin will become available next time you start Rhino.
 
+> Sometimes the commands of the plugin only become available after you start the
+> PythonScriptEditor. Just type `EditPythonScript` ...
 
-
+For detailed information about the UI, please visit: https://github.com/BlockResearchGroup/compas_tna-UI
 
 
 
