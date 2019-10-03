@@ -13,35 +13,35 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 
 ### Day 1
 
+* Introduction to structural design
 * Introduction to graphic statics
 * Computational graphic statics
 
 *Break*
 
-* Graphic statics tutorial
-* Graphic statics examples
+* Introduction to COMPAS
 
 *Lunch*
 
-* Introduction to COMPAS
 
 1. Algebraic Graph Statics (AGS): **compas_ags**
     * Introduction
-    * Example(s)
+    * Examples
 
-2. Thrust Network Analysis (TNA): **compas_tna**
+2. 3D Graphic Statics (3GS): **compas_3gs**
     * Introduction
-    * Example(s)
+    * Examples
 
-3. 3D Graphic Statics (3GS): **compas_3gs**
+3. Thrust Network Analysis (TNA): **compas_tna**
     * Introduction
-    * Example(s)
+    * Examples and tutorial
+
 
 ### Day 2
 
 4. Combinatorial Equilibrium Modelling (CEM)
     * Introduction
-    * Example(s)
+    * Examples and tutorial
 
 
 ## Installation
@@ -56,14 +56,9 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 
 **2. Install required software**
 
-*Note that this may take a while.*
-
 *   [Anaconda 3](https://www.anaconda.com/distribution/)
 *   [Rhino](https://www.rhino3d.com/download)
-*   [Sublime Text 3](https://www.sublimetext.com/3)
-*   [Git](https://git-scm.com/downloads) (Windows only)
-*   [3DEC demo version](https://www.itascacg.com/software-demo) (Windows only)
-*   [Microsoft Visual C++ Compiler for Python 2.7](https://www.microsoft.com/en-us/download/details.aspx?id=44266) (Windows only)
+*   [VS code](https://code.visualstudio.com/)
 
 During the installation of the various tools, just accept all default settings.
 The default location for installing Anaconda is usually in the home directory.
@@ -90,9 +85,6 @@ Not to the newest version, but to this specific version.**
 There are [detailed instructions](https://compas-dev.github.io/main/environments/rhino.html)
 in the COMPAS documentation that explain how to do this.
 
-Instructions for configuring Sublime Text are also available in the COMPAS docs:
-https://compas-dev.github.io/main/environments/sublimetext.html
-
 
 **3. Download repository**
 
@@ -108,13 +100,13 @@ For example, create a folder called "Workshops" on your home drive and unzip the
 *On Windows*
 
 ```
-%USERPROFILE%\Workshops\WS_Anagni2019
+%USERPROFILE%\Workshops\WS_IASS2019
 ```
 
 *On Mac*
 
 ```
-~/Workshops/WS_Anagni2019
+~/Workshop\WS_IASS2019
 ```
 
 
@@ -139,7 +131,7 @@ On Mac, use the "Terminal".
 
 We will use the command line to install the COMPAS Python packages (and their dependencies) required for the workshop.
 
-First, navigate to the root folder of the workshop repository (the folder containing the file `environment.yml`).
+First, navigate to the root folder of the workshop repository (the folder containing the file `windows.yml` or `mac.yml`).
 For example, if you used the download path from above, do
 
 *On Windows*
