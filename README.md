@@ -45,9 +45,6 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 
 ## Getting started
 
-<!-- [Instructions for Mac](mac.md) -->
-<!-- [Instructions for Windows](windows.md) -->
-
 **1. Clean up**
 
 *   If you have an old version of Anaconda installed (for example Anaconda 2), please uninstall it.
@@ -137,14 +134,14 @@ For example, if you used the download path from above, do
 
 ```bash
 cd %USERPROFILE%\Workshops\WS_IASS2019
-conda env update -f windows.yml
+conda env create -f windows.yml
 ```
 
 *On Mac*
 
 ```bash
 cd ~/Workshops/WS_IASS2019
-conda env update -f mac.yml
+conda env create -f mac.yml
 ```
 
 Finally, verify the installation using an interactive Python session.
@@ -168,10 +165,9 @@ Then simply close Rhino again.
 To install the COMPAS packages, type the following on the command line
 
 ```bash
-python -m compas_rhino.install -p compas compas_rhino compas_ags compas_tna compas_3gs
+python -m compas_rhino.install -v 6.0 -p compas compas_rhino compas_ags compas_tna compas_3gs
 ```
 
-On Windows, COMPAS packages are installed for Rhino 6 by default.
 To install COMPAS for Rhino 5 instead, do
 
 ```bash
