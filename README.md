@@ -23,22 +23,22 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 *Lunch*
 
 
-1. Algebraic Graph Statics (AGS): **compas_ags**
+1.  Algebraic Graph Statics (AGS): **compas_ags**
     * Introduction
     * Examples
 
-2. 3D Graphic Statics (3GS): **compas_3gs**
+2.  3D Graphic Statics (3GS): **compas_3gs**
     * Introduction
     * Examples
 
-3. Thrust Network Analysis (TNA): **compas_tna**
+3.  Thrust Network Analysis (TNA): **compas_tna**
     * Introduction
     * Examples and tutorial
 
 
 ### Day 2
 
-4. Combinatorial Equilibrium Modelling (CEM)
+4.  Combinatorial Equilibrium Modelling (CEM)
     * Introduction
     * Examples and tutorial
 
