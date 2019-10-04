@@ -17,7 +17,15 @@ Download the workshop files from the GitHub repo at https://www.github.com/Block
 
 ## Installation
 
-The various steps of the installation procedure will be executed using the Terminal app. To open the app, hit `COMMAND+SPACE` and type "Terminal".
+The various steps of the installation procedure will be executed using the "Command Line".
+
+On Windows, use the "Anaconda Prompt" instead of the "Command Prompt", and make sure to run it *as administrator*.
+
+> To find the Anaconda Prompt open the Start Menu and type "Anaconda".
+> The Anaconda Prompt should already show up in the list of search results.
+> To launch is as administrator, right click and select "Run as administrator".
+
+On Mac, use the "Terminal".
 
 **1. Register conda-forge**
 
@@ -45,7 +53,7 @@ conda activate iass19
 
 > When the "iass19" environment is active, the name "iass19" will appear in parentheses in front of the prompt.
 
-**4. Install compas_ags and compas_tna**
+**4. Install compas_ags, compas_tna, and compas_3gs**
 
 Install `compas_ags`, a COMPAS package for "Algebraic Graphic Statics".
 
@@ -57,6 +65,12 @@ Install `compas_tna`, a COMPAS package for "Thrust Network Analysis".
 
 ```bash
 pip install git+https://www.github.com/BlockResearchGroup/compas_tna.git#egg=compas_tna
+```
+
+Install `compas_3gs`, a COMPAS package for "Three-dimensional Graphic Statics".
+
+```bash
+pip install git+https://www.github.com/compas-dev/compas_3gs.git#egg=compas_3gs
 ```
 
 **5. Download compas_tna-UI**
@@ -80,12 +94,9 @@ Import `compas`, `compas_ags`, and `compas_tna`, and print their version numbers
 >>> import compas
 >>> import compas_ags
 >>> import compas_tna
+>>> import compas_3gs
 >>> compas.__version__
 '0.8.1'
->>> compas_ags.__version__
-'0.1.0'
->>> compas_tna.__version__
-'0.1.0'
 >>> exit()
 ```
 
@@ -93,10 +104,10 @@ Import `compas`, `compas_ags`, and `compas_tna`, and print their version numbers
 
 **1. Install COMPAS packages**
 
-With the "iass19" environment active, install `compas`, `compas_rhino`, `compas_ags`, and `compas_tna` for Rhino.
+With the "iass19" environment active, install `compas`, `compas_rhino`, `compas_ags`, `compas_tna`, and `compas_3gs` for Rhino.
 
 ```bash
-python -m compas_rhino.install -v 6.0 -p compas compas_rhino compas_ags compas_tna
+python -m compas_rhino.install -v 6.0 -p compas compas_rhino compas_ags compas_tna compas_3gs
 ```
 
 The packages will become available the next time you start Rhino.
