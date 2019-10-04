@@ -57,25 +57,23 @@ def vertical(form, zmax):
     return scale
 
 
-# 1. make the form diagram from selected line elements
+# make the form diagram from selected line elements
 
 guids = compas_rhino.select_lines()
-rs.HideObjects(guids)
 
 form = FormDiagram.from_rhinolines(guids)
 form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
+# identify the supports
 
-# 2. identify the supports
-
-keys = DiagramHelper.select_vertices(form)
+guids = compas_rhino.select_curves()
+keys = DiagramHelper.identify_vertices_on_curves(form, guids)
 
 if keys:
     form.set_vertices_attributes(['is_anchor', 'is_fixed'], [True, True], keys=keys)
     form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
-
-# 3. update the boundaries
+# update the boundaries
 # Note: add only one foot per support to control the direction of the horizontal component
 #       of the reaction force
 
@@ -92,8 +90,7 @@ while True:
     if DiagramHelper.move_vertex(form, key):
         form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
-
-# 4. set the constraints
+# set the constraints
 # Note: you should apply 3 sets of constraints
 #       1. the edges in the spanning direction                 => fmin := 2, fmax := 2
 #       2. the edges in the spanning direction on the boundary => fmin := 1, fmin := 1
@@ -107,59 +104,30 @@ while True:
     if DiagramHelper.update_edge_attributes(form, edges):
         form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
-
-# 5. make the force diagram
+# make the force diagram
 
 force = ForceDiagram.from_formdiagram(form)
 force.draw(layer='TNA::ForceDiagram', clear_layer=True)
 
-DiagramHelper.move(force)
-force.draw(layer='TNA::ForceDiagram', clear_layer=True)
-
-
-# 6. compute horizontal equilibrium
+# compute horizontal equilibrium
 
 horizontal(form, force, alpha=100, kmax=500)
 force.draw(layer='TNA::ForceDiagram', clear_layer=True)
 
+# compute vertical equilibrium based on a chosen height of the highest point of the equilibrium network
 
-# 7. compute vertical equilibrium based on a chosen height of the highest point of the equilibrium network
+zmax = rs.GetReal('Z Max')
 
-while True:
-    zmax = rs.GetReal('Z Max')
-    
-    if not zmax:
-        break
-    
-    else:
-        scale = vertical(form, zmax)
-        force.attributes['scale'] = scale
-        
-        
-        settings = {
-            'show.forces'    : True,
-            'show.reactions' : True,
-            'scale.forces'   : 0.02,
-            'scale.reactions': 1.0
-        }
-        
-        form.draw(layer='TNA::FormDiagram', clear_layer=True, settings=settings)
+scale = vertical(form, zmax)
+force.attributes['scale'] = scale
 
+# visualise the result
 
-#
-#zmax = rs.GetReal('Z Max')
-#
-#scale = vertical(form, zmax)
-#force.attributes['scale'] = scale
-#
-#
-## 8. visualise the result
-#
-#settings = {
-#    'show.forces'    : True,
-#    'show.reactions' : True,
-#    'scale.forces'   : 0.02,
-#    'scale.reactions': 1.0
-#}
-#
-#form.draw(layer='TNA::FormDiagram', clear_layer=True, settings=settings)
+settings = {
+    'show.forces'    : True,
+    'show.reactions' : True,
+    'scale.forces'   : 0.02,
+    'scale.reactions': 1.0
+}
+
+form.draw(layer='TNA::FormDiagram', clear_layer=True, settings=settings)

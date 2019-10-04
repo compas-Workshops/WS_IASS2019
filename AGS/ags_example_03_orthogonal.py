@@ -1,3 +1,5 @@
+import os
+
 import random
 
 import compas
@@ -13,7 +15,10 @@ from compas_ags.ags import graphstatics
 
 # 1. make diagrams from obj
 
-form = FormDiagram.from_obj(compas.get('lines.obj'))
+HERE = os.path.abspath(os.path.dirname(__file__))
+FILE = os.path.join(HERE, 'grid.obj')
+
+form = FormDiagram.from_obj(FILE)
 force = ForceDiagram.from_formdiagram(form)
 
 
