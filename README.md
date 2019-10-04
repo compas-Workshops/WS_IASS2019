@@ -13,7 +13,6 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 
 ### Day 1
 
-* Introduction to structural design
 * Introduction to graphic statics
 * Computational graphic statics
 
@@ -44,10 +43,7 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
     * Examples and tutorial
 
 
-## Installation
-
-<!-- [Instructions for Mac](mac.md) -->
-<!-- [Instructions for Windows](windows.md) -->
+## Getting started
 
 **1. Clean up**
 
@@ -106,7 +102,7 @@ For example, create a folder called "Workshops" on your home drive and unzip the
 *On Mac*
 
 ```
-~/Workshop\WS_IASS2019
+~/Workshop/WS_IASS2019
 ```
 
 
@@ -127,7 +123,7 @@ On Mac, use the "Terminal".
 ![The command line](_images/the-command-line.png)
 
 
-## Installation
+## Installing the workshop repository
 
 We will use the command line to install the COMPAS Python packages (and their dependencies) required for the workshop.
 
@@ -169,10 +165,9 @@ Then simply close Rhino again.
 To install the COMPAS packages, type the following on the command line
 
 ```bash
-python -m compas_rhino.install -p compas compas_rhino compas_ags compas_tna compas_3gs
+python -m compas_rhino.install -v 6.0 -p compas compas_rhino compas_ags compas_tna compas_3gs
 ```
 
-On Windows, COMPAS packages are installed for Rhino 6 by default.
 To install COMPAS for Rhino 5 instead, do
 
 ```bash
@@ -228,7 +223,7 @@ The plugin will become available next time you start Rhino.
 > Sometimes the commands of the plugin only become available after you start the
 > PythonScriptEditor. Just type `EditPythonScript` ...
 
-For detailed information about the UI, please visit: https://github.com/BlockResearchGroup/compas_tna-UI
+For detailed information about the compas_tna-UI, please visit: https://github.com/BlockResearchGroup/compas_tna-UI
 
 
 
