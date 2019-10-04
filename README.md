@@ -138,14 +138,14 @@ For example, if you used the download path from above, do
 
 ```bash
 cd %USERPROFILE%\Workshops\WS_IASS2019
-conda env update -f windows.yml
+conda env create -f windows.yml
 ```
 
 *On Mac*
 
 ```bash
 cd ~/Workshops/WS_IASS2019
-conda env update -f mac.yml
+conda env create -f mac.yml
 ```
 
 Finally, verify the installation using an interactive Python session.
