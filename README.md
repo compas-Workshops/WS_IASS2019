@@ -23,35 +23,37 @@ During this workshop we will use COMPAS to explore graphic statics-based structu
 *Lunch*
 
 
-1. Algebraic Graph Statics (AGS): **compas_ags**
+1.  Algebraic Graph Statics (AGS): **compas_ags**
+
     * Introduction
     * Examples
 
-2. 3D Graphic Statics (3GS): **compas_3gs**
+2.  3D Graphic Statics (3GS): **compas_3gs**
+
     * Introduction
     * Examples
 
-3. Thrust Network Analysis (TNA): **compas_tna**
+3.  Thrust Network Analysis (TNA): **compas_tna**
+
     * Introduction
     * Examples and tutorial
 
 
 ### Day 2
 
-4. Combinatorial Equilibrium Modelling (CEM)
+4.  Combinatorial Equilibrium Modelling (CEM)
+
     * Introduction
     * Examples and tutorial
 
 
 ## Getting started
 
-<!-- [Instructions for Mac](mac.md) -->
-<!-- [Instructions for Windows](windows.md) -->
-
 **1. Clean up**
 
 *   If you have an old version of Anaconda installed (for example Anaconda 2), please uninstall it.
 *   If you have a version of Python registered on your `PATH`, please remove it (Windows only).
+*   If you have an old version of COMPAS registered on your `PYTHONPATH`, please remove it.
 
 **2. Install required software**
 
@@ -137,14 +139,14 @@ For example, if you used the download path from above, do
 
 ```bash
 cd %USERPROFILE%\Workshops\WS_IASS2019
-conda env update -f windows.yml
+conda env create -f windows.yml
 ```
 
 *On Mac*
 
 ```bash
 cd ~/Workshops/WS_IASS2019
-conda env update -f mac.yml
+conda env create -f mac.yml
 ```
 
 Finally, verify the installation using an interactive Python session.
@@ -168,10 +170,9 @@ Then simply close Rhino again.
 To install the COMPAS packages, type the following on the command line
 
 ```bash
-python -m compas_rhino.install -p compas compas_rhino compas_ags compas_tna compas_3gs
+python -m compas_rhino.install -v 6.0 -p compas compas_rhino compas_ags compas_tna compas_3gs
 ```
 
-On Windows, COMPAS packages are installed for Rhino 6 by default.
 To install COMPAS for Rhino 5 instead, do
 
 ```bash
