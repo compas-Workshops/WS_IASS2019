@@ -66,9 +66,12 @@ def RunCommand(is_interactive):
 
             'show.forces'    : False,
             'show.reactions' : False,
+            'show.angles'    : False,
 
             'scale.forces'    : 0.1,
             'scale.reactions' : 0.1,
+
+            'tol.angle' : 5.0,
 
             'file.dir'  : get_document_dirname(),
             'file.name' : None

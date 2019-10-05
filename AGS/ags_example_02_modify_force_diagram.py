@@ -116,7 +116,7 @@ force_lines.append({
 viewer = Viewer(form, force, delay_setup=False)
 
 viewer.draw_form(lines=form_lines,
-                 forces_on=False,
+                 forces_on=True,
                  vertexlabel={key: key for key in form.vertices()},
                  vertexsize=0.2,
                  vertexcolor={key: '#000000' for key in fixed})
