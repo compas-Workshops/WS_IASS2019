@@ -20,6 +20,7 @@ def RunCommand(is_interactive):
     if compas_rhino.update_settings(TNA['settings']):
         if form:
             form.draw(layer=TNA['settings']['layer.form'], clear_layer=True, settings=TNA['settings'])
+
         if force:
             force.draw(layer=TNA['settings']['layer.force'], clear_layer=True)
 

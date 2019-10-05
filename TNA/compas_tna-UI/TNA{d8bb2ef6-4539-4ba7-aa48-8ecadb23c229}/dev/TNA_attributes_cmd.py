@@ -139,7 +139,7 @@ def RunCommand(is_interactive):
             if not keys:
                 return
 
-            highlight_vertices(form, keys)
+            highlight_vertices(force, keys)
 
             if DiagramHelper.update_vertex_attributes(force, keys):
                 force.draw(layer=TNA['settings']['layer.force'], clear_layer=True, settings=TNA['settings'])
@@ -149,7 +149,7 @@ def RunCommand(is_interactive):
             if not keys:
                 return
 
-            highlight_edges(form, keys)
+            highlight_edges(force, keys)
 
             if DiagramHelper.update_edge_attributes(force, keys):
                 force.draw(layer=TNA['settings']['layer.force'], clear_layer=True, settings=TNA['settings'])
