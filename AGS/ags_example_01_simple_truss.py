@@ -40,7 +40,7 @@ right = list(form.vertices_where({'x': 6.0, 'y': 0.0}))[0]
 
 # 4. set the magnitude of the applied load
 
-form.set_edge_force_by_index(1, 20.0)
+form.set_edge_force_by_index(1, 100.0)
 
 
 # 5. update diagrams

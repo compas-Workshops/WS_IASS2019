@@ -68,55 +68,53 @@ form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
 # # 2. identify the supports
 
-
-# keys = form.vertices_on_boundary()
-
-# if keys:
-#     form.set_vertices_attributes(['is_anchor', 'is_fixed'], [True, True], keys=keys)
-#     form.draw(layer='TNA::FormDiagram', clear_layer=True)
+keys = form.vertices_on_boundary()
+if keys:
+    form.set_vertices_attributes(['is_anchor', 'is_fixed'], [True, True], keys=keys)
+    form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
 
 # # 3. update the boundaries
-# # Note: add only one foot per support to control the direction of the horizontal component
-# #       of the reaction force
+ # Note: add only one foot per support to control the direction of the horizontal component
+ #       of the reaction force
 
-# form.update_boundaries(feet=1)
-# form.draw(layer='TNA::FormDiagram', clear_layer=True)
+form.update_boundaries(feet=1)
+form.draw(layer='TNA::FormDiagram', clear_layer=True)
 
 
 # # 4. make the force diagram
 
-# force = ForceDiagram.from_formdiagram(form)
-# force.draw(layer='TNA::ForceDiagram', clear_layer=True)
+force = ForceDiagram.from_formdiagram(form)
+force.draw(layer='TNA::ForceDiagram', clear_layer=True)
 
-# DiagramHelper.move(force)
-# force.draw(layer='TNA::ForceDiagram', clear_layer=True)
+DiagramHelper.move(force)
+force.draw(layer='TNA::ForceDiagram', clear_layer=True)
 
 
 # # 5. compute horizontal equilibrium
 
-# horizontal(form, force, alpha=100, kmax=500)
-# force.draw(layer='TNA::ForceDiagram', clear_layer=True)
+horizontal(form, force, alpha=100, kmax=500)
+force.draw(layer='TNA::ForceDiagram', clear_layer=True)
 
 
 # # 6. compute vertical equilibrium based on a chosen height of the highest point of the equilibrium network
 
-# while True:
-#     zmax = rs.GetReal('Z Max')
-    
-#     if not zmax:
-#         break
-    
-#     else:
-#         scale = vertical(form, zmax)
-#         force.attributes['scale'] = scale
-        
-        
-#         settings = {
-#             'show.forces'    : True,
-#             'show.reactions' : True,
-#             'scale.forces'   : 0.02,
-#             'scale.reactions': 1.0
-#         }
-        
-#         form.draw(layer='TNA::FormDiagram', clear_layer=True, settings=settings)
+while True:
+    zmax = rs.GetReal('Z Max')
+   
+    if not zmax:
+        break
+   
+    else:
+        scale = vertical(form, zmax)
+        force.attributes['scale'] = scale
+       
+       
+        settings = {
+            'show.forces'    : True,
+            'show.reactions' : True,
+            'scale.forces'   : 0.02,
+            'scale.reactions': 1.0
+        }
+       
+        form.draw(layer='TNA::FormDiagram', clear_layer=True, settings=settings)
