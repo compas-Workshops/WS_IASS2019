@@ -6,6 +6,6 @@ dependencies:
   - pip>=19.0
   - COMPAS=0.8.1
   - pip:
-    - git+https://github.com/compas-dev/compas_ags.git#egg=compas_ags
+    - git+https://github.com/compas-dev/compas_ags.git#egg=compas_ags 
     - git+https://github.com/BlockResearchGroup/compas_tna.git#egg=compas_tna
-    - git+https://github.com/compas-dev/compas_3gs.git#egg=compas_3gs
+    - git+https://github.com/compas-dev/compas_3gs.git#egg=compas_3gs 

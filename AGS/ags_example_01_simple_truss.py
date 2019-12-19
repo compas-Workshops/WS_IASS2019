@@ -16,10 +16,14 @@ from compas_ags.viewers import Viewer
 from compas_ags.ags import graphstatics
 
 
-# 1. make form diagram from obj
+# 0. set directory to location of this py file, find obj file
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 FILE = os.path.join(HERE, 'simple_truss.obj')
+
+
+# 1. make form diagram from obj
+
 form = FormDiagram.from_obj(FILE)
 
 
@@ -36,7 +40,7 @@ right = list(form.vertices_where({'x': 6.0, 'y': 0.0}))[0]
 
 # 4. set the magnitude of the applied load
 
-form.set_edge_force_by_index(1, -30.0)
+form.set_edge_force_by_index(1, 100.0)
 
 
 # 5. update diagrams
